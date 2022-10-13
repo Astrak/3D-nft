@@ -21,13 +21,18 @@ task('deploy', 'Deploy the smart contracts', async (taskArgs, hre) => {
   });
 });
 
-console.log(process.env.PRIVATE_KEY);
 const options: HardhatUserConfig = {
   solidity: '0.8.17',
   networks: {
     mumbai: {
       url: 'https://matic-testnet-archive-rpc.bwarelabs.com',
       accounts: [`0x${process.env.PRIVATE_KEY as string}`],
+    },
+    localhost: {
+      url: 'https://127.0.0.1:8545',
+      accounts: [
+        '0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80',
+      ],
     },
   },
   etherscan: {

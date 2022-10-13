@@ -32,7 +32,6 @@ export interface Nft3dInterface extends utils.Interface {
     "approve(address,uint256)": FunctionFragment;
     "balanceOf(address)": FunctionFragment;
     "getApproved(uint256)": FunctionFragment;
-    "hasNft3d(address)": FunctionFragment;
     "isApprovedForAll(address,address)": FunctionFragment;
     "mint(string)": FunctionFragment;
     "name()": FunctionFragment;
@@ -52,7 +51,6 @@ export interface Nft3dInterface extends utils.Interface {
       | "approve"
       | "balanceOf"
       | "getApproved"
-      | "hasNft3d"
       | "isApprovedForAll"
       | "mint"
       | "name"
@@ -78,10 +76,6 @@ export interface Nft3dInterface extends utils.Interface {
   encodeFunctionData(
     functionFragment: "getApproved",
     values: [PromiseOrValue<BigNumberish>]
-  ): string;
-  encodeFunctionData(
-    functionFragment: "hasNft3d",
-    values: [PromiseOrValue<string>]
   ): string;
   encodeFunctionData(
     functionFragment: "isApprovedForAll",
@@ -145,7 +139,6 @@ export interface Nft3dInterface extends utils.Interface {
     functionFragment: "getApproved",
     data: BytesLike
   ): Result;
-  decodeFunctionResult(functionFragment: "hasNft3d", data: BytesLike): Result;
   decodeFunctionResult(
     functionFragment: "isApprovedForAll",
     data: BytesLike
@@ -270,11 +263,6 @@ export interface Nft3d extends BaseContract {
       overrides?: CallOverrides
     ): Promise<[string]>;
 
-    hasNft3d(
-      arg0: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<[boolean]>;
-
     isApprovedForAll(
       owner: PromiseOrValue<string>,
       operator: PromiseOrValue<string>,
@@ -352,11 +340,6 @@ export interface Nft3d extends BaseContract {
     overrides?: CallOverrides
   ): Promise<string>;
 
-  hasNft3d(
-    arg0: PromiseOrValue<string>,
-    overrides?: CallOverrides
-  ): Promise<boolean>;
-
   isApprovedForAll(
     owner: PromiseOrValue<string>,
     operator: PromiseOrValue<string>,
@@ -433,11 +416,6 @@ export interface Nft3d extends BaseContract {
       tokenId: PromiseOrValue<BigNumberish>,
       overrides?: CallOverrides
     ): Promise<string>;
-
-    hasNft3d(
-      arg0: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<boolean>;
 
     isApprovedForAll(
       owner: PromiseOrValue<string>,
@@ -552,11 +530,6 @@ export interface Nft3d extends BaseContract {
       overrides?: CallOverrides
     ): Promise<BigNumber>;
 
-    hasNft3d(
-      arg0: PromiseOrValue<string>,
-      overrides?: CallOverrides
-    ): Promise<BigNumber>;
-
     isApprovedForAll(
       owner: PromiseOrValue<string>,
       operator: PromiseOrValue<string>,
@@ -632,11 +605,6 @@ export interface Nft3d extends BaseContract {
 
     getApproved(
       tokenId: PromiseOrValue<BigNumberish>,
-      overrides?: CallOverrides
-    ): Promise<PopulatedTransaction>;
-
-    hasNft3d(
-      arg0: PromiseOrValue<string>,
       overrides?: CallOverrides
     ): Promise<PopulatedTransaction>;
 
