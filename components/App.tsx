@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 import { Scene } from './Scene';
 
 export default function App() {
-  const cameraPosition: [number, number, number] = [-270, 185, -375];
+  const cameraPosition: [number, number, number] = [-27, 18, -37];
   return (
     <Canvas
       camera={{ position: cameraPosition, far: 10000, near: 1 }}

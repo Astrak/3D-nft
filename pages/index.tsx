@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useAccount, useContractRead } from 'wagmi';
 import json from '../artifacts/contracts/Nft3d.sol/Nft3d.json';
 import App from '../components/App';
+import { MUMBAI_CONTRACT } from '../constants';
 
 export default function Home() {
   const { address } = useAccount();

@@ -1,5 +1,8 @@
 import '@nomicfoundation/hardhat-toolbox';
+import { config } from 'dotenv';
 import { HardhatUserConfig, task } from 'hardhat/config';
+
+config({ path: __dirname + '/.env.local' });
 
 task('accounts', 'Prints the list of accounts', async (taskArgs, hre) => {
   const accounts = await hre.ethers.getSigners();
@@ -18,12 +21,13 @@ task('deploy', 'Deploy the smart contracts', async (taskArgs, hre) => {
   });
 });
 
-const config: HardhatUserConfig = {
+console.log(process.env.PRIVATE_KEY);
+const options: HardhatUserConfig = {
   solidity: '0.8.17',
   networks: {
     mumbai: {
       url: 'https://matic-testnet-archive-rpc.bwarelabs.com',
-      accounts: [process.env.PRIVATE_KEY],
+      accounts: [`0x${process.env.PRIVATE_KEY as string}`],
     },
   },
   etherscan: {
@@ -31,4 +35,4 @@ const config: HardhatUserConfig = {
   },
 };
 
-export default config;
+export default options;
