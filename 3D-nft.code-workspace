@@ -1,0 +1,37 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "files.exclude": {
+      "node_modules/": true
+    },
+    "editor.rulers": [80],
+    "editor.formatOnSave": true,
+    "solidity.formatter": "prettier",
+    "[solidity]": {
+      "editor.defaultFormatter": "JuanBlanco.solidity"
+    }
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "html",
+      "typescript",
+      "typescriptreact"
+    ]
+  },
+  "extensions": {
+    "recommendations": [
+      "editorconfig.editorconfig",
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "juanblanco.solidity"
+    ]
+  }
+}
